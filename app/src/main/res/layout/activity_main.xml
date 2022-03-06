@@ -10,11 +10,41 @@
         android:id="@+id/nummer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="@id/plus"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/recept"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:translationY="500px"/>
+
+    <TextView
+        android:id="@+id/recept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/nummer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        android:text="Sample TextView"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:translationY="700px"/>
+
+    <TextView
+        android:id="@+id/receptnaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/recept"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:translationY="-180px" />
 
     <Button
         android:id="@+id/plus"
@@ -24,7 +54,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/minus"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/nummer" />
+        app:layout_constraintTop_toTopOf="@id/nummer"
+        android:translationY="200px"/>
+
     <Button
         android:id="@+id/minus"
         android:layout_width="wrap_content"
@@ -33,6 +65,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@id/plus"
-        app:layout_constraintTop_toTopOf="@id/nummer" />
+        app:layout_constraintTop_toTopOf="@id/nummer"
+        android:translationY="200px"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pancake"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="-111dp"
+        app:layout_constraintBottom_toBottomOf="@id/recept"
+        android:translationY="800px"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

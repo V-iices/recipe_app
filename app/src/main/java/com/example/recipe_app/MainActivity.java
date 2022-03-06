@@ -9,40 +9,51 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     int nummer = 1;
+    int ei = 1;
+    int bloem = 250;
+    int melk = 25;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         TextView counter = findViewById(R.id.nummer);
+        TextView recept = findViewById(R.id.recept);
+        TextView receptnaam = findViewById(R.id.receptnaam);
         Button plusknop = findViewById(R.id.plus);
         Button minusknop = findViewById(R.id.minus);
 
-        counter.setText("Tel af vanaf " + nummer);
+        counter.setText("Pannenkoeken voor " + nummer + " persoon");
+        recept.setText(ei + " ei" + "\n" + bloem + "g bloem" + "\n" + melk + "dl melk");
+        receptnaam.setText("Pannenkoeken");
 
         plusknop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(nummer < 10) {
+                if(nummer >= 0) {
                     nummer++;
-                    counter.setText("Tel af vanaf " + nummer);
-                    plusknop.setEnabled(true);
+                    ei++;
+                    bloem += 250;
+                    melk += 25;
+                    counter.setText("Pannenkoeken voor " + nummer + " personen");
+                    recept.setText(ei + " ei" + "\n" + bloem + "g bloem" + "\n" + melk + "dl melk");
                 }
-                else {
-                    plusknop.setEnabled(false);
-                }
+
             }
         });
         minusknop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(nummer > 1) {
+                if(nummer >= 2) {
                     nummer--;
-                    counter.setText("Tel af vanaf " + nummer);
-                    plusknop.setEnabled(true);
+                    ei--;
+                    bloem -= 250;
+                    melk -= 25;
+                    counter.setText("Pannenkoeken voor " + nummer +" personen");
+                    recept.setText(ei + " ei" + "\n" + bloem + "g bloem" + "\n" + melk + "dl melk");
                 }
-                else {
-                    minusknop.setEnabled(false);
+                if(nummer == 1){
+                    counter.setText("Pannenkoeken voor " + nummer + " persoon");
                 }
             }
         });
