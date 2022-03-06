@@ -1,6 +1,5 @@
-package com.example.Recipe.app;
+package com.example.recipe_app;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -49,4 +48,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
