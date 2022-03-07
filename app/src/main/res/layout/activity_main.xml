@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="@id/recept"
         android:textSize="14sp"
         android:textColor="@color/black"
-        android:translationY="500px"/>
+        android:translationY="100px"/>
 
     <TextView
         android:id="@+id/recept"
@@ -28,23 +28,22 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="16sp"
         android:textStyle="bold|italic"
-        android:text="Sample TextView"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:translationY="700px"/>
+        android:translationY="320px"/>
 
     <TextView
         android:id="@+id/receptnaam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/recept"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recept"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/purple_500"
-        android:translationY="-180px" />
+        android:translationY="-360px" />
 
     <Button
         android:id="@+id/plus"
@@ -55,7 +54,7 @@
         app:layout_constraintLeft_toLeftOf="@id/minus"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/nummer"
-        android:translationY="200px"/>
+        android:translationY="-200px"/>
 
     <Button
         android:id="@+id/minus"
@@ -66,16 +65,40 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@id/plus"
         app:layout_constraintTop_toTopOf="@id/nummer"
-        android:translationY="200px"/>
+        android:translationY="-200px"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/pancake"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="-111dp"
+        android:translationY="400px"
         app:layout_constraintBottom_toBottomOf="@id/recept"
-        android:translationY="800px"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/koek" />
+
+    <ScrollView
+        android:layout_width="0sp"
+        android:layout_height="210sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/minus"
+        app:layout_constraintWidth_percent="0.8"
+        android:translationY="-20sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1. Zeef de bloem. Maak in het midden een kuiltje, breek daarin de eieren. Roer alles door elkaar met een garde.
+                            \n\n2. Schenk er in een straaltje 25 dl melk bij. Bewerk tot een glad mengsel.
+                            \n\n3.  Klop dan de rest van de melk door het beslag zodat het lichter wordt. Vind je het beslag nog te dik, voeg dan eventueel nog wat extra melk toe.
+                            \n\n4. Bak de pannenkoeken in een grote koekenpan, in hete boter of olie."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintWidth_percent="0.8"/>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
